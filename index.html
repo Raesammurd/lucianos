@@ -1,144 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luciano's Restaurant & Pizzeria | Buxton</title>
-    <meta name="description" content="Luciano's is a family-owned Italian restaurant in Buxton town centre, serving authentic Italian food crafted with the freshest ingredients.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luciano's Premium Restaurant</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">LUCIANO'S</a>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#menu">Menu</a>
-                <a href="#reservations">Reservations</a>
-                <button id="cartBtn" class="cart-btn">
-                    Cart <span id="cartCount" class="cart-badge">0</span>
-                </button>
-            </div>
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Authentic Italian Cuisine</h1>
-            <p>Experience our warm hospitality and delicious Italian recipes in the heart of Buxton.</p>
-            <div class="hero-actions">
-                <a href="#reservations" class="btn btn-primary">Book a Table</a>
-                <a href="#menu" class="btn btn-secondary">Explore Menu</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Allergy Assistant Floating Widget -->
-    <div id="aiAssistant" class="ai-assistant collapsed">
-        <div class="ai-header" id="aiHeader">
-            <span class="ai-title">🤖 AI Allergy Assistant</span>
-            <button class="ai-toggle" id="aiToggleBtn">^</button>
-        </div>
-        <div class="ai-body">
-            <p>Tell me your allergies to stay safe.</p>
-            <div class="allergy-tags" id="allergyTags"></div>
-            <div class="ai-input-group">
-                <input type="text" id="allergyInput" placeholder="e.g., Peanut, Gluten, Dairy...">
-                <button id="addAllergyBtn" class="btn btn-small">Add</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <h2 class="section-title">Our Menu</h2>
-            <div class="menu-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="italian">Italian Food</button>
-                <button class="filter-btn" data-filter="drinks">Drinks</button>
-                <button class="filter-btn" data-filter="wines">Wines & Liquor</button>
-                <button class="filter-btn" data-filter="desserts">Desserts</button>
-            </div>
-            <div id="menuGrid" class="menu-grid">
-                <!-- Menu Items will be injected here via JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Reservations Section -->
-    <section id="reservations" class="reservations-section">
-        <div class="container">
-            <div class="reservation-box">
-                <h2 class="section-title">Book a Table</h2>
-                <p class="reservation-desc">Reserve your spot and secure your booking with a small deposit.</p>
-                <form id="reservationForm" class="reservation-form">
-                    <div class="form-group">
-                        <label for="resName">Name</label>
-                        <input type="text" id="resName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="resDate">Date</label>
-                        <input type="date" id="resDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="resTime">Time</label>
-                        <select id="resTime" required>
-                            <option value="">Select Time</option>
-                            <option value="17:00">5:00 PM</option>
-                            <option value="18:00">6:00 PM</option>
-                            <option value="19:00">7:00 PM</option>
-                            <option value="20:00">8:00 PM</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="resGuests">Guests</label>
-                        <input type="number" id="resGuests" min="1" max="20" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary full-width">Pay Deposit (£10) & Book</button>
-                </form>
-                <div id="bookingSuccess" class="success-message hidden">
-                    Booking Confirmed! We look forward to seeing you.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Sidebar -->
-    <div id="cartSidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h2>Your Order</h2>
-            <button id="closeCartBtn" class="close-cart">&times;</button>
-        </div>
-        <div id="cartItems" class="cart-items">
-            <!-- Cart items injected here -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotalAmount">£0.00</span>
-            </div>
-            <button id="submitOrderBtn" class="btn btn-primary full-width">Submit Order (Pay in-person)</button>
-            <button id="payNowBtn" class="btn btn-secondary full-width" style="margin-top: 10px;">Pay Now (Mock Stripe)</button>
-        </div>
-    </div>
-    <div id="cartOverlay" class="cart-overlay"></div>
-
-    <!-- Scripts -->
-    <script src="app.js"></script>
-</body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="antialiased bg-black text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
