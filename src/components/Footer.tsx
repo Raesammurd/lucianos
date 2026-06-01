@@ -16,19 +16,26 @@ export default function Footer() {
   };
 
   useEffect(() => {
+    let frameId: number;
+    const handleResize = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(fitWatermark);
+    };
+
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(fitWatermark);
     } else {
       window.addEventListener('load', fitWatermark);
     }
-    window.addEventListener('resize', fitWatermark);
+    window.addEventListener('resize', handleResize);
     
     // Initial call just in case fonts are already loaded
     setTimeout(fitWatermark, 100);
 
     return () => {
       window.removeEventListener('load', fitWatermark);
-      window.removeEventListener('resize', fitWatermark);
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(frameId);
     };
   }, []);
 

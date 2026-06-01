@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import FadeIn from './FadeIn';
 import AnimatedHeading from './AnimatedHeading';
+import Input from './ui/Input';
+import Select from './ui/Select';
 
 export default function Booking() {
   const { userAllergies, addAllergy, removeAllergy } = useCart();
@@ -114,27 +116,15 @@ export default function Booking() {
               ) : (
                 <form onSubmit={handleBooking} className="flex flex-col gap-5">
                   <div className="grid grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-sm text-white/60 mb-2">Date</label>
-                      <input required type="date" className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors shadow-inner" />
-                    </div>
-                    <div>
-                      <label className="block text-sm text-white/60 mb-2">Time</label>
-                      <input required type="time" className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors shadow-inner" />
-                    </div>
+                    <Input required type="date" label="Date" variant="dark" />
+                    <Input required type="time" label="Time" variant="dark" />
                   </div>
-                  <div>
-                    <label className="block text-sm text-white/60 mb-2">Party Size</label>
-                    <select className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 appearance-none transition-colors shadow-inner">
-                      {[1,2,3,4,5,6,7,8,9,10].map(n => (
-                        <option key={n} value={n} className="bg-gray-900 text-white">{n} {n === 1 ? 'Person' : 'People'}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm text-white/60 mb-2">Name</label>
-                    <input required type="text" className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors shadow-inner" />
-                  </div>
+                  <Select label="Party Size" variant="dark">
+                    {[1,2,3,4,5,6,7,8,9,10].map(n => (
+                      <option key={n} value={n} className="bg-gray-900 text-white">{n} {n === 1 ? 'Person' : 'People'}</option>
+                    ))}
+                  </Select>
+                  <Input required type="text" label="Name" variant="dark" />
                   <button 
                     type="submit" 
                     disabled={isProcessing}

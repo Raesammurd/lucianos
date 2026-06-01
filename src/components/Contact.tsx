@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import FadeIn from './FadeIn';
 import AnimatedHeading from './AnimatedHeading';
+import Input from './ui/Input';
+import Textarea from './ui/Textarea';
 
 export default function Contact() {
   const [isSent, setIsSent] = useState(false);
@@ -40,18 +42,9 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                  <div>
-                    <label className="block text-sm text-black/60 mb-2">Name</label>
-                    <input required type="text" className="w-full bg-black/5 border border-black/10 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-black/30 transition-colors shadow-inner placeholder:text-black/40" />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-black/60 mb-2">Email</label>
-                    <input required type="email" className="w-full bg-black/5 border border-black/10 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-black/30 transition-colors shadow-inner placeholder:text-black/40" />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-black/60 mb-2">Message</label>
-                    <textarea required rows={4} placeholder="Type your message here..." className="w-full bg-black/5 border border-black/10 rounded-lg px-4 py-3 text-black focus:outline-none focus:border-black/30 transition-colors shadow-inner resize-none placeholder:text-black/40"></textarea>
-                  </div>
+                  <Input required type="text" label="Name" variant="light" />
+                  <Input required type="email" label="Email" variant="light" />
+                  <Textarea required rows={4} label="Message" placeholder="Type your message here..." variant="light" />
                   <button 
                     type="submit" 
                     className="w-full bg-black text-white py-4 rounded-lg font-medium transition-all duration-300 mt-2 shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.3)] transform hover:-translate-y-1"

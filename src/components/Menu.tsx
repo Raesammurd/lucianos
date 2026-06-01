@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext';
 import FadeIn from './FadeIn';
 import AnimatedHeading from './AnimatedHeading';
 
-const categories = ["all", "italian", "desserts", "drinks", "wines"];
+const categories = ["all", ...Array.from(new Set(menuItems.map(item => item.category)))];
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState("all");

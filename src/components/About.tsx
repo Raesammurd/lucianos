@@ -9,7 +9,7 @@ export default function About() {
           
           {/* Image Side */}
           <FadeIn duration={1000}>
-            <div className="relative group">
+            <div className="relative group max-w-md mx-auto lg:max-w-sm">
               {/* Decorative background glow */}
               <div className="absolute -inset-4 bg-white/5 rounded-3xl blur-xl transition duration-1000 group-hover:bg-white/10 group-hover:blur-2xl"></div>
               
@@ -25,14 +25,14 @@ export default function About() {
 
           {/* Text Side */}
           <FadeIn delay={200} duration={1000}>
-            <div className="flex flex-col">
-              <span style={{ fontFamily: "'Caveat', cursive" }} className="text-3xl text-white/70 mb-2">Our Story</span>
+            <div className="flex flex-col bg-white text-black p-8 md:p-10 lg:p-12 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] max-w-lg mx-auto lg:mx-0">
+              <span style={{ fontFamily: "'Caveat', cursive" }} className="text-3xl text-black/60 mb-2">Our Story</span>
               <AnimatedHeading 
                 text="About Us" 
-                className="text-4xl md:text-6xl font-light mb-8"
+                className="text-4xl md:text-5xl font-light mb-6"
               />
               
-              <div className="space-y-6 text-white/70 text-lg leading-relaxed font-light">
+              <div className="space-y-4 text-black/80 text-base leading-relaxed font-light">
                 <p>
                   Welcome to Luciano's, the tastiest slice of Italy this side of Buxton! We're a family-owned Italian restaurant that's all about bringing the flavours and traditions of the Old Country to your table.
                 </p>
@@ -54,9 +54,9 @@ export default function About() {
               </div>
 
               {/* Signature */}
-              <div className="mt-12 flex flex-col items-start">
-                <span style={{ fontFamily: "'Caveat', cursive" }} className="text-4xl text-white tracking-wide">Salvi and Luciano</span>
-                <span className="text-white/50 text-sm mt-1 uppercase tracking-widest">Owner & Son</span>
+              <div className="mt-10 flex flex-col items-start border-t border-black/10 pt-6">
+                <span style={{ fontFamily: "'Caveat', cursive" }} className="text-4xl text-black tracking-wide">Salvi and Luciano</span>
+                <span className="text-black/50 text-sm mt-1 uppercase tracking-widest">Owner & Son</span>
               </div>
             </div>
           </FadeIn>
